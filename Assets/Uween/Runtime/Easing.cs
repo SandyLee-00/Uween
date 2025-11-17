@@ -26,49 +26,49 @@ namespace Uween
         public static readonly Easing EaseOut = new BackEaseOut();
         public static readonly Easing EaseOutIn = new BackEaseOutIn();
 
-        public static T EaseInBack<T>(this T tween) where T : Tween
+        public static T EaseInBack<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutBack<T>(this T tween) where T : Tween
+        public static T EaseInOutBack<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutBack<T>(this T tween) where T : Tween
+        public static T EaseOutBack<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInBack<T>(this T tween) where T : Tween
+        public static T EaseOutInBack<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
         }
 
-        public static T EaseInBackWith<T>(this T tween, float s) where T : Tween
+        public static T EaseInBackWith<T>(this T tween, float s) where T : TweenBase
         {
             tween.Easing = new BackEaseIn(s);
             return tween;
         }
 
-        public static T EaseInOutBackWith<T>(this T tween, float s) where T : Tween
+        public static T EaseInOutBackWith<T>(this T tween, float s) where T : TweenBase
         {
             tween.Easing = new BackEaseInOut(s);
             return tween;
         }
 
-        public static T EaseOutBackWith<T>(this T tween, float s) where T : Tween
+        public static T EaseOutBackWith<T>(this T tween, float s) where T : TweenBase
         {
             tween.Easing = new BackEaseOut(s);
             return tween;
         }
 
-        public static T EaseOutInBackWith<T>(this T tween, float s) where T : Tween
+        public static T EaseOutInBackWith<T>(this T tween, float s) where T : TweenBase
         {
             tween.Easing = new BackEaseOutIn(s);
             return tween;
@@ -82,25 +82,25 @@ namespace Uween
         public static readonly Easing EaseOut = new BounceEaseOut();
         public static readonly Easing EaseOutIn = new BounceEaseOutIn();
 
-        public static T EaseInBounce<T>(this T tween) where T : Tween
+        public static T EaseInBounce<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutBounce<T>(this T tween) where T : Tween
+        public static T EaseInOutBounce<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutBounce<T>(this T tween) where T : Tween
+        public static T EaseOutBounce<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInBounce<T>(this T tween) where T : Tween
+        public static T EaseOutInBounce<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
@@ -114,49 +114,49 @@ namespace Uween
         public static readonly Easing EaseOut = new CircularEaseOut();
         public static readonly Easing EaseOutIn = new CircularEaseOutIn();
 
-        public static T EaseInCircular<T>(this T tween) where T : Tween
+        public static T EaseInCircular<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutCircular<T>(this T tween) where T : Tween
+        public static T EaseInOutCircular<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutCircular<T>(this T tween) where T : Tween
+        public static T EaseOutCircular<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInCircular<T>(this T tween) where T : Tween
+        public static T EaseOutInCircular<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
         }
 
-        public static T EaseInCirc<T>(this T tween) where T : Tween
+        public static T EaseInCirc<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutCirc<T>(this T tween) where T : Tween
+        public static T EaseInOutCirc<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutCirc<T>(this T tween) where T : Tween
+        public static T EaseOutCirc<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInCirc<T>(this T tween) where T : Tween
+        public static T EaseOutInCirc<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
@@ -170,25 +170,25 @@ namespace Uween
         public static readonly Easing EaseOut = new CubicEaseOut();
         public static readonly Easing EaseOutIn = new CubicEaseOutIn();
 
-        public static T EaseInCubic<T>(this T tween) where T : Tween
+        public static T EaseInCubic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutCubic<T>(this T tween) where T : Tween
+        public static T EaseInOutCubic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutCubic<T>(this T tween) where T : Tween
+        public static T EaseOutCubic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInCubic<T>(this T tween) where T : Tween
+        public static T EaseOutInCubic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
@@ -202,49 +202,49 @@ namespace Uween
         public static readonly Easing EaseOut = new ElasticEaseOut();
         public static readonly Easing EaseOutIn = new ElasticEaseOutIn();
 
-        public static T EaseInElastic<T>(this T tween) where T : Tween
+        public static T EaseInElastic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutElastic<T>(this T tween) where T : Tween
+        public static T EaseInOutElastic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutElastic<T>(this T tween) where T : Tween
+        public static T EaseOutElastic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInElastic<T>(this T tween) where T : Tween
+        public static T EaseOutInElastic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
         }
 
-        public static T EaseInElasticWith<T>(this T tween, float a, float p) where T : Tween
+        public static T EaseInElasticWith<T>(this T tween, float a, float p) where T : TweenBase
         {
             tween.Easing = new ElasticEaseIn(a, p);
             return tween;
         }
 
-        public static T EaseInOutElasticWith<T>(this T tween, float a, float p) where T : Tween
+        public static T EaseInOutElasticWith<T>(this T tween, float a, float p) where T : TweenBase
         {
             tween.Easing = new ElasticEaseInOut(a, p);
             return tween;
         }
 
-        public static T EaseOutElasticWith<T>(this T tween, float a, float p) where T : Tween
+        public static T EaseOutElasticWith<T>(this T tween, float a, float p) where T : TweenBase
         {
             tween.Easing = new ElasticEaseOut(a, p);
             return tween;
         }
 
-        public static T EaseOutInElasticWith<T>(this T tween, float a, float p) where T : Tween
+        public static T EaseOutInElasticWith<T>(this T tween, float a, float p) where T : TweenBase
         {
             tween.Easing = new ElasticEaseOutIn(a, p);
             return tween;
@@ -258,49 +258,49 @@ namespace Uween
         public static readonly Easing EaseOut = new ExponentialEaseOut();
         public static readonly Easing EaseOutIn = new ExponentialEaseOutIn();
 
-        public static T EaseInExponential<T>(this T tween) where T : Tween
+        public static T EaseInExponential<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutExponential<T>(this T tween) where T : Tween
+        public static T EaseInOutExponential<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutExponential<T>(this T tween) where T : Tween
+        public static T EaseOutExponential<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInExponential<T>(this T tween) where T : Tween
+        public static T EaseOutInExponential<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
         }
 
-        public static T EaseInExpo<T>(this T tween) where T : Tween
+        public static T EaseInExpo<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutExpo<T>(this T tween) where T : Tween
+        public static T EaseInOutExpo<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutExpo<T>(this T tween) where T : Tween
+        public static T EaseOutExpo<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInExpo<T>(this T tween) where T : Tween
+        public static T EaseOutInExpo<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
@@ -314,49 +314,49 @@ namespace Uween
         public static readonly Easing EaseOut = new QuadraticEaseOut();
         public static readonly Easing EaseOutIn = new QuadraticEaseOutIn();
 
-        public static T EaseInQuadratic<T>(this T tween) where T : Tween
+        public static T EaseInQuadratic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutQuadratic<T>(this T tween) where T : Tween
+        public static T EaseInOutQuadratic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutQuadratic<T>(this T tween) where T : Tween
+        public static T EaseOutQuadratic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInQuadratic<T>(this T tween) where T : Tween
+        public static T EaseOutInQuadratic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
         }
 
-        public static T EaseInQuad<T>(this T tween) where T : Tween
+        public static T EaseInQuad<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutQuad<T>(this T tween) where T : Tween
+        public static T EaseInOutQuad<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutQuad<T>(this T tween) where T : Tween
+        public static T EaseOutQuad<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInQuad<T>(this T tween) where T : Tween
+        public static T EaseOutInQuad<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
@@ -370,49 +370,49 @@ namespace Uween
         public static readonly Easing EaseOut = new QuarticEaseOut();
         public static readonly Easing EaseOutIn = new QuarticEaseOutIn();
 
-        public static T EaseInQuartic<T>(this T tween) where T : Tween
+        public static T EaseInQuartic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutQuartic<T>(this T tween) where T : Tween
+        public static T EaseInOutQuartic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutQuartic<T>(this T tween) where T : Tween
+        public static T EaseOutQuartic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInQuartic<T>(this T tween) where T : Tween
+        public static T EaseOutInQuartic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
         }
 
-        public static T EaseInQuart<T>(this T tween) where T : Tween
+        public static T EaseInQuart<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutQuart<T>(this T tween) where T : Tween
+        public static T EaseInOutQuart<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutQuart<T>(this T tween) where T : Tween
+        public static T EaseOutQuart<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInQuart<T>(this T tween) where T : Tween
+        public static T EaseOutInQuart<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
@@ -426,49 +426,49 @@ namespace Uween
         public static readonly Easing EaseOut = new QuinticEaseOut();
         public static readonly Easing EaseOutIn = new QuinticEaseOutIn();
 
-        public static T EaseInQuintic<T>(this T tween) where T : Tween
+        public static T EaseInQuintic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutQuintic<T>(this T tween) where T : Tween
+        public static T EaseInOutQuintic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutQuintic<T>(this T tween) where T : Tween
+        public static T EaseOutQuintic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInQuintic<T>(this T tween) where T : Tween
+        public static T EaseOutInQuintic<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
         }
 
-        public static T EaseInQuint<T>(this T tween) where T : Tween
+        public static T EaseInQuint<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutQuint<T>(this T tween) where T : Tween
+        public static T EaseInOutQuint<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutQuint<T>(this T tween) where T : Tween
+        public static T EaseOutQuint<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInQuint<T>(this T tween) where T : Tween
+        public static T EaseOutInQuint<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;
@@ -482,25 +482,25 @@ namespace Uween
         public static readonly Easing EaseOut = new SineEaseOut();
         public static readonly Easing EaseOutIn = new SineEaseOutIn();
 
-        public static T EaseInSine<T>(this T tween) where T : Tween
+        public static T EaseInSine<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseIn;
             return tween;
         }
 
-        public static T EaseInOutSine<T>(this T tween) where T : Tween
+        public static T EaseInOutSine<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseInOut;
             return tween;
         }
 
-        public static T EaseOutSine<T>(this T tween) where T : Tween
+        public static T EaseOutSine<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOut;
             return tween;
         }
 
-        public static T EaseOutInSine<T>(this T tween) where T : Tween
+        public static T EaseOutInSine<T>(this T tween) where T : TweenBase
         {
             tween.Easing = EaseOutIn;
             return tween;

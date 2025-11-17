@@ -5,9 +5,9 @@ namespace Uween
     /// <summary>
     /// A base class for Uween's tweens.
     /// </summary>
-    public abstract class Tween : MonoBehaviour
+    public abstract class TweenBase : MonoBehaviour
     {
-        protected static T Get<T>(GameObject g, float duration) where T : Tween
+        protected static T Get<T>(GameObject g, float duration) where T : TweenBase
         {
             T tween = g.GetComponent<T>();
             if (tween == null)

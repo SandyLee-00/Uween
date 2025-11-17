@@ -2,7 +2,7 @@
 
 namespace Uween
 {
-    public class TweenNull : Tween
+    public class TweenNull : TweenBase
     {
         public static TweenNull Add(GameObject g, float duration)
         {

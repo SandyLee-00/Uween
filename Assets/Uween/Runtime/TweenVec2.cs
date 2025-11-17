@@ -2,11 +2,11 @@
 
 namespace Uween
 {
-    public abstract class TweenVec2 : Tween
+    public abstract class TweenVec2 : TweenBase
     {
         protected static T Add<T>(GameObject g, float duration) where T : TweenVec2
         {
-            return Tween.Get<T>(g, duration);
+            return TweenBase.Get<T>(g, duration);
         }
 
         protected static T Add<T>(GameObject g, float duration, Vector2 to) where T : TweenVec2
