@@ -2,29 +2,29 @@
 
 namespace Uween
 {
-    public abstract class Easings
+    public abstract class Easing
     {
         /// <summary>
         /// Calculate Robert Penner's easing.
         /// </summary>
-        /// <param name="t">Time.</param>
-        /// <param name="b">Beginning value.</param>
-        /// <param name="c">Value delta.</param>
-        /// <param name="d">Duration.</param>
-        public abstract float Calculate(float t, float b, float c, float d);
+        /// <param name="elapsedTime">Time.</param>
+        /// <param name="startValue">Beginning value.</param>
+        /// <param name="changeInValue">Value delta.</param>
+        /// <param name="duration">Duration.</param>
+        public abstract float Calculate(float elapsedTime, float startValue, float changeInValue, float duration);
     }
 
     public static class Linear
     {
-        public static readonly Easings EaseNone = new LinearEaseNone();
+        public static readonly Easing EaseNone = new LinearEaseNone();
     }
 
     public static class Back
     {
-        public static readonly Easings EaseIn = new BackEaseIn();
-        public static readonly Easings EaseInOut = new BackEaseInOut();
-        public static readonly Easings EaseOut = new BackEaseOut();
-        public static readonly Easings EaseOutIn = new BackEaseOutIn();
+        public static readonly Easing EaseIn = new BackEaseIn();
+        public static readonly Easing EaseInOut = new BackEaseInOut();
+        public static readonly Easing EaseOut = new BackEaseOut();
+        public static readonly Easing EaseOutIn = new BackEaseOutIn();
 
         public static T EaseInBack<T>(this T tween) where T : Tween
         {
@@ -77,10 +77,10 @@ namespace Uween
 
     public static class Bounce
     {
-        public static readonly Easings EaseIn = new BounceEaseIn();
-        public static readonly Easings EaseInOut = new BounceEaseInOut();
-        public static readonly Easings EaseOut = new BounceEaseOut();
-        public static readonly Easings EaseOutIn = new BounceEaseOutIn();
+        public static readonly Easing EaseIn = new BounceEaseIn();
+        public static readonly Easing EaseInOut = new BounceEaseInOut();
+        public static readonly Easing EaseOut = new BounceEaseOut();
+        public static readonly Easing EaseOutIn = new BounceEaseOutIn();
 
         public static T EaseInBounce<T>(this T tween) where T : Tween
         {
@@ -109,10 +109,10 @@ namespace Uween
 
     public static class Circular
     {
-        public static readonly Easings EaseIn = new CircularEaseIn();
-        public static readonly Easings EaseInOut = new CircularEaseInOut();
-        public static readonly Easings EaseOut = new CircularEaseOut();
-        public static readonly Easings EaseOutIn = new CircularEaseOutIn();
+        public static readonly Easing EaseIn = new CircularEaseIn();
+        public static readonly Easing EaseInOut = new CircularEaseInOut();
+        public static readonly Easing EaseOut = new CircularEaseOut();
+        public static readonly Easing EaseOutIn = new CircularEaseOutIn();
 
         public static T EaseInCircular<T>(this T tween) where T : Tween
         {
@@ -165,10 +165,10 @@ namespace Uween
 
     public static class Cubic
     {
-        public static readonly Easings EaseIn = new CubicEaseIn();
-        public static readonly Easings EaseInOut = new CubicEaseInOut();
-        public static readonly Easings EaseOut = new CubicEaseOut();
-        public static readonly Easings EaseOutIn = new CubicEaseOutIn();
+        public static readonly Easing EaseIn = new CubicEaseIn();
+        public static readonly Easing EaseInOut = new CubicEaseInOut();
+        public static readonly Easing EaseOut = new CubicEaseOut();
+        public static readonly Easing EaseOutIn = new CubicEaseOutIn();
 
         public static T EaseInCubic<T>(this T tween) where T : Tween
         {
@@ -197,10 +197,10 @@ namespace Uween
 
     public static class Elastic
     {
-        public static readonly Easings EaseIn = new ElasticEaseIn();
-        public static readonly Easings EaseInOut = new ElasticEaseInOut();
-        public static readonly Easings EaseOut = new ElasticEaseOut();
-        public static readonly Easings EaseOutIn = new ElasticEaseOutIn();
+        public static readonly Easing EaseIn = new ElasticEaseIn();
+        public static readonly Easing EaseInOut = new ElasticEaseInOut();
+        public static readonly Easing EaseOut = new ElasticEaseOut();
+        public static readonly Easing EaseOutIn = new ElasticEaseOutIn();
 
         public static T EaseInElastic<T>(this T tween) where T : Tween
         {
@@ -253,10 +253,10 @@ namespace Uween
 
     public static class Exponential
     {
-        public static readonly Easings EaseIn = new ExponentialEaseIn();
-        public static readonly Easings EaseInOut = new ExponentialEaseInOut();
-        public static readonly Easings EaseOut = new ExponentialEaseOut();
-        public static readonly Easings EaseOutIn = new ExponentialEaseOutIn();
+        public static readonly Easing EaseIn = new ExponentialEaseIn();
+        public static readonly Easing EaseInOut = new ExponentialEaseInOut();
+        public static readonly Easing EaseOut = new ExponentialEaseOut();
+        public static readonly Easing EaseOutIn = new ExponentialEaseOutIn();
 
         public static T EaseInExponential<T>(this T tween) where T : Tween
         {
@@ -309,10 +309,10 @@ namespace Uween
 
     public static class Quadratic
     {
-        public static readonly Easings EaseIn = new QuadraticEaseIn();
-        public static readonly Easings EaseInOut = new QuadraticEaseInOut();
-        public static readonly Easings EaseOut = new QuadraticEaseOut();
-        public static readonly Easings EaseOutIn = new QuadraticEaseOutIn();
+        public static readonly Easing EaseIn = new QuadraticEaseIn();
+        public static readonly Easing EaseInOut = new QuadraticEaseInOut();
+        public static readonly Easing EaseOut = new QuadraticEaseOut();
+        public static readonly Easing EaseOutIn = new QuadraticEaseOutIn();
 
         public static T EaseInQuadratic<T>(this T tween) where T : Tween
         {
@@ -365,10 +365,10 @@ namespace Uween
 
     public static class Quartic
     {
-        public static readonly Easings EaseIn = new QuarticEaseIn();
-        public static readonly Easings EaseInOut = new QuarticEaseInOut();
-        public static readonly Easings EaseOut = new QuarticEaseOut();
-        public static readonly Easings EaseOutIn = new QuarticEaseOutIn();
+        public static readonly Easing EaseIn = new QuarticEaseIn();
+        public static readonly Easing EaseInOut = new QuarticEaseInOut();
+        public static readonly Easing EaseOut = new QuarticEaseOut();
+        public static readonly Easing EaseOutIn = new QuarticEaseOutIn();
 
         public static T EaseInQuartic<T>(this T tween) where T : Tween
         {
@@ -421,10 +421,10 @@ namespace Uween
 
     public static class Quintic
     {
-        public static readonly Easings EaseIn = new QuinticEaseIn();
-        public static readonly Easings EaseInOut = new QuinticEaseInOut();
-        public static readonly Easings EaseOut = new QuinticEaseOut();
-        public static readonly Easings EaseOutIn = new QuinticEaseOutIn();
+        public static readonly Easing EaseIn = new QuinticEaseIn();
+        public static readonly Easing EaseInOut = new QuinticEaseInOut();
+        public static readonly Easing EaseOut = new QuinticEaseOut();
+        public static readonly Easing EaseOutIn = new QuinticEaseOutIn();
 
         public static T EaseInQuintic<T>(this T tween) where T : Tween
         {
@@ -477,10 +477,10 @@ namespace Uween
 
     public static class Sine
     {
-        public static readonly Easings EaseIn = new SineEaseIn();
-        public static readonly Easings EaseInOut = new SineEaseInOut();
-        public static readonly Easings EaseOut = new SineEaseOut();
-        public static readonly Easings EaseOutIn = new SineEaseOutIn();
+        public static readonly Easing EaseIn = new SineEaseIn();
+        public static readonly Easing EaseInOut = new SineEaseInOut();
+        public static readonly Easing EaseOut = new SineEaseOut();
+        public static readonly Easing EaseOutIn = new SineEaseOutIn();
 
         public static T EaseInSine<T>(this T tween) where T : Tween
         {
@@ -507,7 +507,7 @@ namespace Uween
         }
     }
 
-    public class LinearEaseNone : Easings
+    public class LinearEaseNone : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -515,7 +515,7 @@ namespace Uween
         }
     }
 
-    public class BackEaseIn : Easings
+    public class BackEaseIn : Easing
     {
         public BackEaseIn()
         {
@@ -534,7 +534,7 @@ namespace Uween
         }
     }
 
-    public class BackEaseInOut : Easings
+    public class BackEaseInOut : Easing
     {
         public BackEaseInOut()
         {
@@ -558,7 +558,7 @@ namespace Uween
         }
     }
 
-    public class BackEaseOut : Easings
+    public class BackEaseOut : Easing
     {
         public BackEaseOut()
         {
@@ -577,7 +577,7 @@ namespace Uween
         }
     }
 
-    public class BackEaseOutIn : Easings
+    public class BackEaseOutIn : Easing
     {
         public BackEaseOutIn()
         {
@@ -601,7 +601,7 @@ namespace Uween
         }
     }
 
-    public class BounceEaseIn : Easings
+    public class BounceEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -624,7 +624,7 @@ namespace Uween
         }
     }
 
-    public class BounceEaseInOut : Easings
+    public class BounceEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -669,7 +669,7 @@ namespace Uween
         }
     }
 
-    public class BounceEaseOut : Easings
+    public class BounceEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -692,7 +692,7 @@ namespace Uween
         }
     }
 
-    public class BounceEaseOutIn : Easings
+    public class BounceEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -737,7 +737,7 @@ namespace Uween
         }
     }
 
-    public class CircularEaseIn : Easings
+    public class CircularEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -745,7 +745,7 @@ namespace Uween
         }
     }
 
-    public class CircularEaseInOut : Easings
+    public class CircularEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -758,7 +758,7 @@ namespace Uween
         }
     }
 
-    public class CircularEaseOut : Easings
+    public class CircularEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -766,7 +766,7 @@ namespace Uween
         }
     }
 
-    public class CircularEaseOutIn : Easings
+    public class CircularEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -779,7 +779,7 @@ namespace Uween
         }
     }
 
-    public class CubicEaseIn : Easings
+    public class CubicEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -787,7 +787,7 @@ namespace Uween
         }
     }
 
-    public class CubicEaseInOut : Easings
+    public class CubicEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -795,7 +795,7 @@ namespace Uween
         }
     }
 
-    public class CubicEaseOut : Easings
+    public class CubicEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -803,7 +803,7 @@ namespace Uween
         }
     }
 
-    public class CubicEaseOutIn : Easings
+    public class CubicEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -811,7 +811,7 @@ namespace Uween
         }
     }
 
-    public class ElasticEaseIn : Easings
+    public class ElasticEaseIn : Easing
     {
         public ElasticEaseIn()
         {
@@ -860,7 +860,7 @@ namespace Uween
         }
     }
 
-    public class ElasticEaseInOut : Easings
+    public class ElasticEaseInOut : Easing
     {
         public ElasticEaseInOut()
         {
@@ -914,7 +914,7 @@ namespace Uween
         }
     }
 
-    public class ElasticEaseOut : Easings
+    public class ElasticEaseOut : Easing
     {
         public ElasticEaseOut()
         {
@@ -963,7 +963,7 @@ namespace Uween
         }
     }
 
-    public class ElasticEaseOutIn : Easings
+    public class ElasticEaseOutIn : Easing
     {
         public ElasticEaseOutIn()
         {
@@ -1047,7 +1047,7 @@ namespace Uween
         }
     }
 
-    public class ExponentialEaseIn : Easings
+    public class ExponentialEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1055,7 +1055,7 @@ namespace Uween
         }
     }
 
-    public class ExponentialEaseInOut : Easings
+    public class ExponentialEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1078,7 +1078,7 @@ namespace Uween
         }
     }
 
-    public class ExponentialEaseOut : Easings
+    public class ExponentialEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1086,7 +1086,7 @@ namespace Uween
         }
     }
 
-    public class ExponentialEaseOutIn : Easings
+    public class ExponentialEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1099,7 +1099,7 @@ namespace Uween
         }
     }
 
-    public class QuadraticEaseIn : Easings
+    public class QuadraticEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1107,7 +1107,7 @@ namespace Uween
         }
     }
 
-    public class QuadraticEaseInOut : Easings
+    public class QuadraticEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1120,7 +1120,7 @@ namespace Uween
         }
     }
 
-    public class QuadraticEaseOut : Easings
+    public class QuadraticEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1128,7 +1128,7 @@ namespace Uween
         }
     }
 
-    public class QuadraticEaseOutIn : Easings
+    public class QuadraticEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1141,7 +1141,7 @@ namespace Uween
         }
     }
 
-    public class QuarticEaseIn : Easings
+    public class QuarticEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1149,7 +1149,7 @@ namespace Uween
         }
     }
 
-    public class QuarticEaseInOut : Easings
+    public class QuarticEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1162,7 +1162,7 @@ namespace Uween
         }
     }
 
-    public class QuarticEaseOut : Easings
+    public class QuarticEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1170,7 +1170,7 @@ namespace Uween
         }
     }
 
-    public class QuarticEaseOutIn : Easings
+    public class QuarticEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1183,7 +1183,7 @@ namespace Uween
         }
     }
 
-    public class QuinticEaseIn : Easings
+    public class QuinticEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1191,7 +1191,7 @@ namespace Uween
         }
     }
 
-    public class QuinticEaseInOut : Easings
+    public class QuinticEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1204,7 +1204,7 @@ namespace Uween
         }
     }
 
-    public class QuinticEaseOut : Easings
+    public class QuinticEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1212,7 +1212,7 @@ namespace Uween
         }
     }
 
-    public class QuinticEaseOutIn : Easings
+    public class QuinticEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1225,7 +1225,7 @@ namespace Uween
         }
     }
 
-    public class SineEaseIn : Easings
+    public class SineEaseIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1233,7 +1233,7 @@ namespace Uween
         }
     }
 
-    public class SineEaseInOut : Easings
+    public class SineEaseInOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1241,7 +1241,7 @@ namespace Uween
         }
     }
 
-    public class SineEaseOut : Easings
+    public class SineEaseOut : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {
@@ -1249,7 +1249,7 @@ namespace Uween
         }
     }
 
-    public class SineEaseOutIn : Easings
+    public class SineEaseOutIn : Easing
     {
         public override float Calculate(float t, float b, float c, float d)
         {

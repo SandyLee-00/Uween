@@ -9,7 +9,7 @@ namespace Uween
             return Get<TweenNull>(g, duration);
         }
 
-        protected override void UpdateValue(Easings e, float t, float d)
+        protected override void UpdateValue(Easing e, float t, float d)
         {
         }
     }

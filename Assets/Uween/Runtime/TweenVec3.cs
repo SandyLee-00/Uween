@@ -33,7 +33,7 @@ namespace Uween
             ToValue = Value;
         }
 
-        protected override void UpdateValue(Easings e, float t, float d)
+        protected override void UpdateValue(Easing e, float t, float d)
         {
             var v = Vector3.zero;
             v.x = e.Calculate(t, FromValue.x, ToValue.x - FromValue.x, d);

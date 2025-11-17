@@ -16,15 +16,15 @@ namespace Uween
             }
 
             tween.Reset();
-            tween.duration = duration;
+            tween._duration = duration;
             tween.enabled = true;
             return tween;
         }
 
-        protected float duration;
-        protected float delayTime;
-        protected float elapsedTime;
-        protected Easings easing;
+        protected float _duration;
+        protected float _delayTime;
+        protected float _elapsedTime;
+        protected Easing _easing;
 
         /// <summary>
         /// Total duration of this tween (sec).
@@ -32,7 +32,7 @@ namespace Uween
         /// <value>The duration.</value>
         public float Duration
         {
-            get { return Mathf.Max(0f, duration); }
+            get { return Mathf.Max(0f, _duration); }
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Uween
         /// <value>The position.</value>
         public float Position
         {
-            get { return Mathf.Max(0f, elapsedTime - DelayTime); }
+            get { return Mathf.Max(0f, _elapsedTime - DelayTime); }
         }
 
         /// <summary>
@@ -50,18 +50,18 @@ namespace Uween
         /// <value>The delay time.</value>
         public float DelayTime
         {
-            get { return Mathf.Max(0f, delayTime); }
-            set { delayTime = value; }
+            get { return Mathf.Max(0f, _delayTime); }
+            set { _delayTime = value; }
         }
 
         /// <summary>
         /// Easing that be used for calculating tweening value.
         /// </summary>
         /// <value>The easing.</value>
-        public Easings Easing
+        public Easing Easing
         {
-            get { return easing ?? Linear.EaseNone; }
-            set { easing = value; }
+            get { return _easing ?? Linear.EaseNone; }
+            set { _easing = value; }
         }
 
         /// <summary>
@@ -80,22 +80,22 @@ namespace Uween
 
         public void Skip()
         {
-            elapsedTime = DelayTime + Duration;
+            _elapsedTime = DelayTime + Duration;
             Update();
         }
 
         protected virtual void Reset()
         {
-            duration = 0f;
-            delayTime = 0f;
-            elapsedTime = 0f;
-            easing = null;
+            _duration = 0f;
+            _delayTime = 0f;
+            _elapsedTime = 0f;
+            _easing = null;
             OnComplete = null;
         }
 
         public virtual void Update()
         {
-            Update(elapsedTime + Time.deltaTime);
+            Update(_elapsedTime + Time.deltaTime);
         }
 
         public virtual void Update(float elapsed)
@@ -103,14 +103,14 @@ namespace Uween
             var delay = DelayTime;
             var duration = Duration;
 
-            elapsedTime = elapsed;
+            _elapsedTime = elapsed;
 
-            if (elapsedTime < delay)
+            if (_elapsedTime < delay)
             {
                 return;
             }
 
-            var t = elapsedTime - delay;
+            var t = _elapsedTime - delay;
 
             if (t >= duration)
             {
@@ -123,7 +123,7 @@ namespace Uween
                     t = duration;
                 }
 
-                elapsedTime = delay + duration;
+                _elapsedTime = delay + duration;
                 enabled = false;
             }
 
@@ -140,6 +140,6 @@ namespace Uween
             }
         }
 
-        protected abstract void UpdateValue(Easings e, float t, float d);
+        protected abstract void UpdateValue(Easing e, float t, float d);
     }
 }

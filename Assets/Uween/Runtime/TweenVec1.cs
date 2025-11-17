@@ -28,7 +28,7 @@ namespace Uween
             ToValue = Value;
         }
 
-        protected override void UpdateValue(Easings e, float t, float d)
+        protected override void UpdateValue(Easing e, float t, float d)
         {
             Value = e.Calculate(t, FromValue, ToValue - FromValue, d);
         }
