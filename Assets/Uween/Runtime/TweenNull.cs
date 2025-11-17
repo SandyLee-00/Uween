@@ -6,7 +6,7 @@ namespace Uween
     {
         public static TweenNull Add(GameObject g, float duration)
         {
-            return Get<TweenNull>(g, duration);
+            return Set<TweenNull>(g, duration);
         }
 
         protected override void UpdateValue(Easing e, float t, float d)

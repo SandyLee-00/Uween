@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Uween
 {
-    public class TweenC : TweenVec3
+    public class TweenC : Tween3
     {
         public static TweenC Add(GameObject g, float duration)
         {

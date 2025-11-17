@@ -7,7 +7,7 @@ namespace Uween
     /// </summary>
     public abstract class TweenBase : MonoBehaviour
     {
-        protected static T Get<T>(GameObject g, float duration) where T : TweenBase
+        protected static T Set<T>(GameObject g, float duration) where T : TweenBase
         {
             T tween = g.GetComponent<T>();
             if (tween == null)
@@ -39,7 +39,7 @@ namespace Uween
         /// Current playing position (sec).
         /// </summary>
         /// <value>The position.</value>
-        public float Position
+        public float TweenTime
         {
             get { return Mathf.Max(0f, _elapsedTime - DelayTime); }
         }
@@ -70,7 +70,7 @@ namespace Uween
         /// <value><c>true</c> if this tween is complete; otherwise, <c>false</c>.</value>
         public bool IsComplete
         {
-            get { return Position >= Duration; }
+            get { return TweenTime >= Duration; }
         }
 
         /// <summary>
@@ -100,46 +100,35 @@ namespace Uween
 
         public virtual void Update(float elapsed)
         {
-            var delay = DelayTime;
-            var duration = Duration;
-
             _elapsedTime = elapsed;
 
-            if (_elapsedTime < delay)
+            // 딜레이 시간 동안 기다림
+            if (_elapsedTime < DelayTime)
             {
                 return;
             }
 
-            var t = _elapsedTime - delay;
-
-            if (t >= duration)
+            // 트윈 완료 여부 체크
+            bool justCompleted = false;
+            if (IsComplete)
             {
-                if (duration == 0f)
-                {
-                    t = duration = 1f;
-                }
-                else
-                {
-                    t = duration;
-                }
-
-                _elapsedTime = delay + duration;
+                _elapsedTime = DelayTime + Duration;
                 enabled = false;
+                justCompleted = false;
             }
 
-            UpdateValue(Easing, t, duration);
+            // 트윈 값 업데이트
+            UpdateValue(Easing, TweenTime, Duration);
 
-            if (!enabled)
+            // 완료 시 콜백 호출
+            if (justCompleted && OnComplete != null)
             {
-                if (OnComplete != null)
-                {
-                    var callback = OnComplete;
-                    OnComplete = null;
-                    callback();
-                }
+                var callback = OnComplete;
+                OnComplete = null;
+                callback();
             }
         }
 
-        protected abstract void UpdateValue(Easing e, float t, float d);
+        protected abstract void UpdateValue(Easing easing, float tweenTime, float duration);
     }
 }

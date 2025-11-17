@@ -2,7 +2,7 @@
 
 namespace Uween
 {
-    public static class FluentSyntax
+    public static class TweenExtensions
     {
         public static T Delay<T>(this T tween, float delay) where T : TweenBase
         {

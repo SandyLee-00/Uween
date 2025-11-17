@@ -2,7 +2,7 @@
 
 namespace Uween
 {
-    public abstract class TweenVec2T : TweenVec2
+    public abstract class TweenVec2T : Tween2
     {
         protected abstract Vector3 Vector { get; set; }
 

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Uween
 {
-    public class TweenFillAmount : TweenVec1
+    public class TweenFillAmount : TweenValue
     {
         public static TweenFillAmount Add(GameObject g, float duration)
         {
@@ -15,16 +15,16 @@ namespace Uween
             return Add<TweenFillAmount>(g, duration, to);
         }
 
-        private Image Im;
+        private Image _image;
 
         protected Image GetImage()
         {
-            if (Im == null)
+            if (_image == null)
             {
-                Im = GetComponent<Image>();
+                _image = GetComponent<Image>();
             }
 
-            return Im;
+            return _image;
         }
 
         protected override float Value

@@ -3,8 +3,10 @@ using UnityEngine.UI;
 
 namespace Uween
 {
-    public class TweenCA : TweenVec4
+    public class TweenCA : Tween4
     {
+        private Graphic _graphic;
+
         public static TweenCA Add(GameObject g, float duration)
         {
             return Add<TweenCA>(g, duration);
@@ -17,7 +19,7 @@ namespace Uween
 
         public static TweenCA Add(GameObject g, float duration, Color to)
         {
-            return Add<TweenCA>(g, duration, (Vector4) to);
+            return Add<TweenCA>(g, duration, (Vector4)to);
         }
 
         public static TweenCA Add(GameObject g, float duration, float toR, float toG, float toB, float toA)
@@ -25,16 +27,14 @@ namespace Uween
             return Add<TweenCA>(g, duration, toR, toG, toB, toA);
         }
 
-        private Graphic G;
-
         protected Graphic GetGraphic()
         {
-            if (G == null)
+            if (_graphic == null)
             {
-                G = GetComponent<Graphic>();
+                _graphic = GetComponent<Graphic>();
             }
 
-            return G;
+            return _graphic;
         }
 
         protected override Vector4 Value
